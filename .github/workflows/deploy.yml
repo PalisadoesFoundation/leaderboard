@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -34,8 +34,9 @@ jobs:
         run: flutter build web --release --base-href "/leaderboard/"
         
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
+          name: web
           path: './build/web'
           
   deploy:
@@ -46,6 +47,12 @@ jobs:
     needs: build
     
     steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: web
+          path: ./build/web
+          
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2 
