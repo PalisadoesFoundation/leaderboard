@@ -31,7 +31,8 @@ jobs:
           channel: 'stable'
       
       - name: Create .env file
-        run: cp .env.example .env
+        run: |
+          echo "GH_TOKEN=${{ secrets.GH_TOKEN }}" > .env
       
       - name: Install dependencies
         run: flutter pub get
