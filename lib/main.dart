@@ -17,8 +17,7 @@ class GithubLeaderboardApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final githubToken = dotenv.env['GITHUB_TOKEN'] ?? '';
-
+    final githubToken = dotenv.env['GH_TOKEN'] ?? '';
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'GitHub PR Leaderboard',
