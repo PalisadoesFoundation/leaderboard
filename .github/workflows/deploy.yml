@@ -43,7 +43,7 @@ jobs:
           find build/web -type f
         
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: web
           path: './build/web'
@@ -57,7 +57,7 @@ jobs:
     
     steps:
       - name: Download artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v2
         with:
           name: web
           path: ./build/web
