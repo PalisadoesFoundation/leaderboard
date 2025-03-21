@@ -32,7 +32,6 @@ migrate_working_dir/
 
 # Environment files
 .env
-.env.*
 
 # Web related
 
