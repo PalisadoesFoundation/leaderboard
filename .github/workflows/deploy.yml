@@ -37,7 +37,7 @@ jobs:
         run: flutter pub get
       
       - name: Build web
-        run: flutter build web --base-href "/talawa_leaderboard/"
+        run: flutter build web --base-href "/leaderboard/"
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
